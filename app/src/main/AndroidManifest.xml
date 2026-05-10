@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- Additional permissions for image picker -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+
+    <application
+        android:name=".lab9.BluromaticApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ApplicationEx"
+        tools:replace="android:fullBackupContent"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ApplicationEx">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".lab1.Lab1Activity" android:exported="true" android:label="Lab 1" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab2.Lab2Activity" android:exported="true" android:label="Lab 2" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab3.Lab3Activity" android:exported="true" android:label="Lab 3" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab4.Lab4Activity" android:exported="true" android:label="Lab 4" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab5.Lab5Activity" android:exported="true" android:label="Lab 5" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab6.Lab6Activity" android:exported="true" android:label="Lab 6" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab7.Lab7Activity" android:exported="true" android:label="Lab 7" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab8.Lab8Activity" android:exported="true" android:label="Lab 8" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab9.MainActivity" android:exported="true" android:label="Lab 9 Blur" android:theme="@style/Theme.ApplicationEx" />
+        <activity android:name=".lab9.Lab9Activity" android:exported="true" android:label="Lab 9" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+        <activity android:name=".lab10.Lab10Activity" android:exported="true" android:label="Lab 10" android:theme="@style/Theme.ApplicationEx">
+            <intent-filter><action android:name="android.intent.action.MAIN" /></intent-filter>
+        </activity>
+    </application>
+
+</manifest>
