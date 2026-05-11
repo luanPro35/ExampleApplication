@@ -20,7 +20,7 @@ fun Bai1Screen() {
         KotlinConcept(
             "Chương trình Kotlin",
             "Là chương trình main() nhỏ nhất để in văn bản",
-            "fun main() {\n    println(\"Hello, world!\")\n}"
+            "fun main() {\n    println(\"Chào mừng đến với Kotlin!\")\n}"
         ),
         KotlinConcept(
             "In một dòng văn bản",
@@ -35,12 +35,12 @@ fun Bai1Screen() {
         KotlinConcept(
             "Biến (Variables)",
             "val cho hằng số (không đổi), var cho biến (có thể đổi)",
-            "// Assign once, cannot change.\nval age = \"5\"\nval name = \"Rover\"\n\n// Assign and change as needed.\nvar roll = 6\nvar rolledValue: Int = 4"
+            "// Thông tin cá nhân (không đổi)\nval ten = \"Nguyen Van A\"\nval tuoi = 20\nval lop = \"CTK41\"\n\n// Điểm số (có thể thay đổi)\nvar diemToan = 8.5\nvar diemLy = 7.0\nvar diemHoa = 9.0\n\n// Cập nhật điểm mới\ndiemToan = 9.0  // ✅ Được phép\n// ten = \"Tran Thi B\"  // ❌ Lỗi vì val không thể thay đổi"
         ),
         KotlinConcept(
             "Mẫu chuỗi (String Templates)",
-            "Sử dụng \u0024 để chèn giá trị biến vào chuỗi",
-            "println(\"You are already \u0024{age}!\")\nprintln(\"You are already \u0024{age} days old, \u0024{name}!\")"
+            "Sử dụng \$ để chèn giá trị biến vào chuỗi",
+            "// Thông tin sinh viên\nval hoTen = \"Le Thi Mai\"\nval mssv = \"20211234\"\nval diemTB = 8.2\n\n// In thông báo\nprintln(\"Sinh vien: \$hoTen\")\nprintln(\"Ma so: \$mssv\")\nprintln(\"Diem trung binh: \$diemTB\")\n\n// Ghép chuỗi phức tạp\nprintln(\"Sinh vien \$hoTen (\$mssv) co diem TB la \$diemTB\")\n\n// Tính toán trong chuỗi\nval diem1 = 8.0\nval diem2 = 7.5\nprintln(\"Diem trung binh: \${(diem1 + diem2) / 2}\")"
         ),
         KotlinConcept(
             "Loại dữ liệu (Data Types)",
@@ -50,7 +50,7 @@ fun Bai1Screen() {
         KotlinConcept(
             "Hàm (Functions)",
             "Định nghĩa và gọi hàm",
-            "// Hàm không có đối số\nfun printHello() {\n    println(\"Hello Kotlin\")\n}\n\n// Hàm có đối số\nfun printBorder(border: String, count: Int) {\n    repeat(count) { print(border) }\n    println()\n}"
+            "// Hàm tính điểm trung bình\nfun tinhDiemTB(toan: Double, ly: Double, hoa: Double): Double {\n    return (toan + ly + hoa) / 3\n}\n\n// Hàm xếp loại\nfun xepLoai(diem: Double): String {\n    return when {\n        diem >= 8.5 -> \"Gioi\"\n        diem >= 7.0 -> \"Kha\"\n        diem >= 5.5 -> \"Trung binh\"\n        else -> \"Yeu\"\n    }\n}\n\n// Hàm in bảng điểm\nfun inBangDiem(hoTen: String, diemTB: Double, xepLoai: String) {\n    println(\"--- BANG DIEM ---\")\n    println(\"Ho ten: \$hoTen\")\n    println(\"Diem TB: \$diemTB\")\n    println(\"Xep loai: \$xepLoai\")\n    println(\"-----------------\")\n}\n\n// Sử dụng hàm\nval dtb = tinhDiemTB(8.0, 7.5, 9.0)\nval loai = xepLoai(dtb)\ninBangDiem(\"Nguyen Van A\", dtb, loai)"
         ),
         KotlinConcept(
             "Toán tử & Logic",
@@ -59,13 +59,13 @@ fun Bai1Screen() {
         ),
         KotlinConcept(
             "Kiểm soát luồng (Flow Control)",
-            "Sử dụng if/else và when",
-            "if (num > 4) {\n    println(\"Greater than 4\")\n} else {\n    println(\"4 or less\")\n}\n\nwhen (rollResult) {\n    6 -> println(\"You won!\")\n    else -> println(\"Try again!\")\n}"
+            "Sử dụng if/else và when cho điều kiện thực tế",
+            "// Kiểm tra tuổi để xác định đối tượng\nval tuoi = 17\n\nif (tuoi >= 18) {\n    println(\"Du tuoi bau cu\")\n} else {\n    println(\"Chua du tuoi bau cu\")\n}\n\n// Xếp loại học lực\nval diem = 7.8\nval xepLoai = when {\n    diem >= 9.0 -> \"Xuat sac\"\n    diem >= 8.0 -> \"Gioi\"\n    diem >= 7.0 -> \"Kha\"\n    diem >= 5.0 -> \"Trung binh\"\n    else -> \"Yeu\"\n}\nprintln(\"Xep loai: \$xepLoai\")\n\n// Kiểm tra ngày trong tuần\nval ngay = 3\nval tenNgay = when (ngay) {\n    1 -> \"Thu Hai\"\n    2 -> \"Thu Ba\"\n    3 -> \"Thu Tu\"\n    4 -> \"Thu Nam\"\n    5 -> \"Thu Sau\"\n    6, 7 -> \"Cuoi tuan\"\n    else -> \"Khong hop le\"\n}\nprintln(\"Hom nay la: \$tenNgay\")"
         ),
         KotlinConcept(
             "Lớp (Classes)",
-            "Định nghĩa lớp đơn giản",
-            "class Dice(val numSides: Int) {\n    fun roll(): Int {\n        return (1..numSides).random()\n    }\n}\n\nval myFirstDice = Dice(6)"
+            "Định nghĩa lớp và đối tượng",
+            "// Lớp SinhVien\nclass SinhVien(\n    val hoTen: String,\n    val mssv: String,\n    var lop: String\n) {\n    private val diem = mutableListOf<Double>()\n    \n    fun themDiem(diemMoi: Double) {\n        diem.add(diemMoi)\n    }\n    \n    fun tinhDiemTB(): Double {\n        return if (diem.isNotEmpty()) diem.average() else 0.0\n    }\n    \n    fun inThongTin() {\n        println(\"Sinh vien: \$hoTen\")\n        println(\"MSSV: \$mssv\")\n        println(\"Lop: \$lop\")\n        println(\"Diem TB: \${tinhDiemTB()}\")\n    }\n}\n\n// Tạo đối tượng và sử dụng\nval sv1 = SinhVien(\"Tran Van B\", \"20215678\", \"CTK42\")\nsv1.themDiem(8.0)\nsv1.themDiem(7.5)\nsv1.themDiem(9.0)\nsv1.inThongTin()"
         )
     )
 
@@ -77,7 +77,7 @@ fun Bai1Screen() {
     ) {
         item {
             Text(
-                text = "Kotlin Programming Basics",
+                text = "Kotlin Fundamentals - Lab 1",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,

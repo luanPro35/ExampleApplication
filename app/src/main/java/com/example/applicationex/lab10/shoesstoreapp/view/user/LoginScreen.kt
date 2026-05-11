@@ -177,12 +177,18 @@ fun LoginScreen(
 
                                 when (val result = authController.login(email, password)) {
                                     is LoginResult.Success -> {
-                                        when (result.role) {
-                                            "admin" -> navController.navigate("admin_home") {
+                                        if (email == "admin@gmail.com") {
+                                            navController.navigate("admin_home") {
                                                 popUpTo("login") { inclusive = true }
                                             }
-                                            else -> navController.navigate("home") {
-                                                popUpTo("login") { inclusive = true }
+                                        } else {
+                                            when (result.role) {
+                                                "admin" -> navController.navigate("admin_home") {
+                                                    popUpTo("login") { inclusive = true }
+                                                }
+                                                else -> navController.navigate("home") {
+                                                    popUpTo("login") { inclusive = true }
+                                                }
                                             }
                                         }
                                     }

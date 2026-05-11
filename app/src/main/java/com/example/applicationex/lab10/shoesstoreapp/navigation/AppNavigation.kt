@@ -17,6 +17,10 @@ import com.example.applicationex.lab10.shoesstoreapp.view.user.MyOrdersScreen
 import com.example.applicationex.lab10.shoesstoreapp.view.user.OrderTrackingScreen
 import com.example.applicationex.lab10.shoesstoreapp.view.user.ForgotPasswordScreen
 import com.example.applicationex.lab10.shoesstoreapp.view.user.SignupScreen
+import com.example.applicationex.lab10.shoesstoreapp.view.admin.AdminDashboardScreen
+import com.example.applicationex.lab10.shoesstoreapp.view.admin.ManageProductScreen
+import com.example.applicationex.lab10.shoesstoreapp.view.admin.ManageOrderScreen
+import com.example.applicationex.lab10.shoesstoreapp.view.admin.ReportsAndStatisticsScreen
 import com.example.applicationex.lab10.shoesstoreapp.controller.AuthController
 
 @Composable
@@ -79,6 +83,23 @@ fun AppNavigation(navController: NavHostController) {
                 onBackClick = { navController.navigateUp() },
                 orderController = remember { com.example.applicationex.lab10.shoesstoreapp.controller.OrderController() }
             )
+        }
+
+        // Admin Routes
+        composable("admin_home") {
+            AdminDashboardScreen(navController = navController)
+        }
+        
+        composable("manage_product") {
+            ManageProductScreen(navController = navController)
+        }
+        
+        composable("manage_orders") {
+            ManageOrderScreen(navController = navController)
+        }
+        
+        composable("report_and_statistics") {
+            ReportsAndStatisticsScreen(navController = navController)
         }
     }
 }
