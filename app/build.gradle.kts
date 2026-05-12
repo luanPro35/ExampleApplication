@@ -56,6 +56,9 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     
+    // Firebase Firestore for inventory data
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.1")
+    
     // WorkManager dependencies
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.work:work-multiprocess:2.9.0")

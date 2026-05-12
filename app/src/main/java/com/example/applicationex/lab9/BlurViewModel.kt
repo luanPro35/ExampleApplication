@@ -10,7 +10,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.work.WorkInfo
-import com.example.applicationex.lab9.BluromaticApplication
+import com.example.applicationex.MainApplication
 import com.example.applicationex.R
 import com.example.applicationex.lab9.WorkerKeys
 import com.example.applicationex.lab9.BluromaticRepository
@@ -93,8 +93,8 @@ class BlurViewModel(
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
-                val app = this[APPLICATION_KEY] as BluromaticApplication
-                BlurViewModel(app, app.container.bluromaticRepository)
+                val app = this[APPLICATION_KEY] as MainApplication
+                BlurViewModel(app, app.lab9Container.bluromaticRepository)
             }
         }
     }
